@@ -14,3 +14,18 @@ D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.AdminInterf
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.ClientRequests.resources
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.CoClientManage.resources
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.NormalClientManage.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\bin\Debug\Yien Express.exe.config
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.exe
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.pdb
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\bin\Debug\Yien Express.exe
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\bin\Debug\Yien Express.pdb
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csprojResolveAssemblyReference.cache
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.AdminInterface.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.ClientRequests.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.CoClientManage.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Form1.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.NormalClientManage.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Properties.Resources.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Recieve.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Transfer.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csproj.GenerateResource.Cache
