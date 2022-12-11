@@ -72,7 +72,7 @@ namespace Business
             }
         }
 
-        public DataSet searchNormalClients()
+        public DataSet searchAllNormalClients()
         {
             try
             {

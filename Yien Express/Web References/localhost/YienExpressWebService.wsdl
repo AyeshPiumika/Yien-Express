@@ -22,6 +22,7 @@
       <s:element name="UpdateNormalClients">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ncid" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="ncname" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="nccontact" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="ncnic" type="s:int" />
@@ -33,6 +34,58 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="UpdateNormalClientsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findNormalClients">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ncid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findNormalClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findNormalClientsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNormalClients">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ncid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNormalClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteNormalClientsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchAllNormalClients">
+        <s:complexType />
+      </s:element>
+      <s:element name="searchAllNormalClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchAllNormalClientsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -50,6 +103,24 @@
   <wsdl:message name="UpdateNormalClientsSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateNormalClientsResponse" />
   </wsdl:message>
+  <wsdl:message name="findNormalClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:findNormalClients" />
+  </wsdl:message>
+  <wsdl:message name="findNormalClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:findNormalClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteNormalClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteNormalClients" />
+  </wsdl:message>
+  <wsdl:message name="deleteNormalClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteNormalClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchAllNormalClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:searchAllNormalClients" />
+  </wsdl:message>
+  <wsdl:message name="searchAllNormalClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:searchAllNormalClientsResponse" />
+  </wsdl:message>
   <wsdl:portType name="YienExpressWebServiceSoap">
     <wsdl:operation name="insertNormalClients">
       <wsdl:input message="tns:insertNormalClientsSoapIn" />
@@ -58,6 +129,18 @@
     <wsdl:operation name="UpdateNormalClients">
       <wsdl:input message="tns:UpdateNormalClientsSoapIn" />
       <wsdl:output message="tns:UpdateNormalClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findNormalClients">
+      <wsdl:input message="tns:findNormalClientsSoapIn" />
+      <wsdl:output message="tns:findNormalClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteNormalClients">
+      <wsdl:input message="tns:deleteNormalClientsSoapIn" />
+      <wsdl:output message="tns:deleteNormalClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchAllNormalClients">
+      <wsdl:input message="tns:searchAllNormalClientsSoapIn" />
+      <wsdl:output message="tns:searchAllNormalClientsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="YienExpressWebServiceSoap" type="tns:YienExpressWebServiceSoap">
@@ -80,6 +163,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="findNormalClients">
+      <soap:operation soapAction="http://tempuri.org/findNormalClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNormalClients">
+      <soap:operation soapAction="http://tempuri.org/deleteNormalClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAllNormalClients">
+      <soap:operation soapAction="http://tempuri.org/searchAllNormalClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="YienExpressWebServiceSoap12" type="tns:YienExpressWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -94,6 +204,33 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateNormalClients">
       <soap12:operation soapAction="http://tempuri.org/UpdateNormalClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findNormalClients">
+      <soap12:operation soapAction="http://tempuri.org/findNormalClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNormalClients">
+      <soap12:operation soapAction="http://tempuri.org/deleteNormalClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAllNormalClients">
+      <soap12:operation soapAction="http://tempuri.org/searchAllNormalClients" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

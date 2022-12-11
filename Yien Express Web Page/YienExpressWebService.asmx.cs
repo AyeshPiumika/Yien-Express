@@ -40,18 +40,63 @@ namespace Yien_Express_Web_Page
         }
 
         [WebMethod]
-        public int UpdateNormalClients(string ncname, int nccontact, int ncnic, string ncaddress)
+        public int UpdateNormalClients(int ncid, string ncname, int nccontact, int ncnic, string ncaddress)
         {
             try
             {
                 NormalClients ncclient = new NormalClients();
-                //ncclient.ncid = ncid;
+                ncclient.ncid = ncid;
                 ncclient.ncname = ncname;
                 ncclient.nccontact = nccontact;
                 ncclient.ncnic = ncnic;
                 ncclient.ncaddress = ncaddress;
 
                 return ncclient.updateNormalClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet findNormalClients(int ncid)
+        {
+            try
+            {
+                NormalClients ncclient = new NormalClients();
+                ncclient.ncid = ncid;
+
+                return ncclient.findNormalClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public int deleteNormalClients(int ncid)
+        {
+            try
+            {
+                NormalClients ncclient = new NormalClients();
+                ncclient.ncid = ncid;
+
+                return ncclient.deleteNormalClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet searchAllNormalClients()
+        {
+            try
+            {
+                return new NormalClients().searchAllNormalClients();
             }
             catch
             {

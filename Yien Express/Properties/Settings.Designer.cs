@@ -25,6 +25,17 @@ namespace Yien_Express.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-C3CU2KB\\SQLEXPRESS;Initial Catalog=db_Yien_Express;Integrated" +
+            " Security=True")]
+        public string db_Yien_ExpressConnectionString {
+            get {
+                return ((string)(this["db_Yien_ExpressConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:53125/YienExpressWebService.asmx")]
         public string Yien_Express_localhost_YienExpressWebService {

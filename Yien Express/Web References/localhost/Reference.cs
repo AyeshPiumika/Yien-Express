@@ -20,6 +20,7 @@ namespace Yien_Express.localhost {
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
+    using System.Data;
     
     
     /// <remarks/>
@@ -32,6 +33,12 @@ namespace Yien_Express.localhost {
         private System.Threading.SendOrPostCallback insertNormalClientsOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateNormalClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback findNormalClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteNormalClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback searchAllNormalClientsOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -78,6 +85,15 @@ namespace Yien_Express.localhost {
         public event UpdateNormalClientsCompletedEventHandler UpdateNormalClientsCompleted;
         
         /// <remarks/>
+        public event findNormalClientsCompletedEventHandler findNormalClientsCompleted;
+        
+        /// <remarks/>
+        public event deleteNormalClientsCompletedEventHandler deleteNormalClientsCompleted;
+        
+        /// <remarks/>
+        public event searchAllNormalClientsCompletedEventHandler searchAllNormalClientsCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public int insertNormalClients(string ncname, int nccontact, int ncnic, string ncaddress) {
             object[] results = this.Invoke("insertNormalClients", new object[] {
@@ -114,8 +130,9 @@ namespace Yien_Express.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int UpdateNormalClients(string ncname, int nccontact, int ncnic, string ncaddress) {
+        public int UpdateNormalClients(int ncid, string ncname, int nccontact, int ncnic, string ncaddress) {
             object[] results = this.Invoke("UpdateNormalClients", new object[] {
+                        ncid,
                         ncname,
                         nccontact,
                         ncnic,
@@ -124,16 +141,17 @@ namespace Yien_Express.localhost {
         }
         
         /// <remarks/>
-        public void UpdateNormalClientsAsync(string ncname, int nccontact, int ncnic, string ncaddress) {
-            this.UpdateNormalClientsAsync(ncname, nccontact, ncnic, ncaddress, null);
+        public void UpdateNormalClientsAsync(int ncid, string ncname, int nccontact, int ncnic, string ncaddress) {
+            this.UpdateNormalClientsAsync(ncid, ncname, nccontact, ncnic, ncaddress, null);
         }
         
         /// <remarks/>
-        public void UpdateNormalClientsAsync(string ncname, int nccontact, int ncnic, string ncaddress, object userState) {
+        public void UpdateNormalClientsAsync(int ncid, string ncname, int nccontact, int ncnic, string ncaddress, object userState) {
             if ((this.UpdateNormalClientsOperationCompleted == null)) {
                 this.UpdateNormalClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateNormalClientsOperationCompleted);
             }
             this.InvokeAsync("UpdateNormalClients", new object[] {
+                        ncid,
                         ncname,
                         nccontact,
                         ncnic,
@@ -144,6 +162,91 @@ namespace Yien_Express.localhost {
             if ((this.UpdateNormalClientsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.UpdateNormalClientsCompleted(this, new UpdateNormalClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/findNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet findNormalClients(int ncid) {
+            object[] results = this.Invoke("findNormalClients", new object[] {
+                        ncid});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void findNormalClientsAsync(int ncid) {
+            this.findNormalClientsAsync(ncid, null);
+        }
+        
+        /// <remarks/>
+        public void findNormalClientsAsync(int ncid, object userState) {
+            if ((this.findNormalClientsOperationCompleted == null)) {
+                this.findNormalClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfindNormalClientsOperationCompleted);
+            }
+            this.InvokeAsync("findNormalClients", new object[] {
+                        ncid}, this.findNormalClientsOperationCompleted, userState);
+        }
+        
+        private void OnfindNormalClientsOperationCompleted(object arg) {
+            if ((this.findNormalClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.findNormalClientsCompleted(this, new findNormalClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/deleteNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int deleteNormalClients(int ncid) {
+            object[] results = this.Invoke("deleteNormalClients", new object[] {
+                        ncid});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void deleteNormalClientsAsync(int ncid) {
+            this.deleteNormalClientsAsync(ncid, null);
+        }
+        
+        /// <remarks/>
+        public void deleteNormalClientsAsync(int ncid, object userState) {
+            if ((this.deleteNormalClientsOperationCompleted == null)) {
+                this.deleteNormalClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteNormalClientsOperationCompleted);
+            }
+            this.InvokeAsync("deleteNormalClients", new object[] {
+                        ncid}, this.deleteNormalClientsOperationCompleted, userState);
+        }
+        
+        private void OndeleteNormalClientsOperationCompleted(object arg) {
+            if ((this.deleteNormalClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteNormalClientsCompleted(this, new deleteNormalClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/searchAllNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet searchAllNormalClients() {
+            object[] results = this.Invoke("searchAllNormalClients", new object[0]);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void searchAllNormalClientsAsync() {
+            this.searchAllNormalClientsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void searchAllNormalClientsAsync(object userState) {
+            if ((this.searchAllNormalClientsOperationCompleted == null)) {
+                this.searchAllNormalClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsearchAllNormalClientsOperationCompleted);
+            }
+            this.InvokeAsync("searchAllNormalClients", new object[0], this.searchAllNormalClientsOperationCompleted, userState);
+        }
+        
+        private void OnsearchAllNormalClientsOperationCompleted(object arg) {
+            if ((this.searchAllNormalClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.searchAllNormalClientsCompleted(this, new searchAllNormalClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -214,6 +317,84 @@ namespace Yien_Express.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void findNormalClientsCompletedEventHandler(object sender, findNormalClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class findNormalClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal findNormalClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void deleteNormalClientsCompletedEventHandler(object sender, deleteNormalClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class deleteNormalClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal deleteNormalClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void searchAllNormalClientsCompletedEventHandler(object sender, searchAllNormalClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class searchAllNormalClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal searchAllNormalClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
             }
         }
     }

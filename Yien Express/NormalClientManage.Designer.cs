@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNCAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,15 +40,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNCID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvnc = new System.Windows.Forms.DataGridView();
             this.btnNCDelete = new System.Windows.Forms.Button();
             this.btnNCFind = new System.Windows.Forms.Button();
             this.btnNCUpdate = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnViewAll = new System.Windows.Forms.Button();
+            this.db_Yien_ExpressDataSet = new Yien_Express.db_Yien_ExpressDataSet();
+            this.tblNormalClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_NormalClientsTableAdapter = new Yien_Express.db_Yien_ExpressDataSetTableAdapters.tbl_NormalClientsTableAdapter();
+            this.ncidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ncnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nccontactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ncnicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ncaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvnc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNormalClientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -156,17 +167,25 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "ID :";
             // 
-            // dataGridView1
+            // dgvnc
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.Orange;
-            this.dataGridView1.Location = new System.Drawing.Point(199, 132);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(499, 303);
-            this.dataGridView1.TabIndex = 49;
+            this.dgvnc.AutoGenerateColumns = false;
+            this.dgvnc.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvnc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ncidDataGridViewTextBoxColumn,
+            this.ncnameDataGridViewTextBoxColumn,
+            this.nccontactDataGridViewTextBoxColumn,
+            this.ncnicDataGridViewTextBoxColumn,
+            this.ncaddressDataGridViewTextBoxColumn});
+            this.dgvnc.DataSource = this.tblNormalClientsBindingSource;
+            this.dgvnc.GridColor = System.Drawing.Color.Orange;
+            this.dgvnc.Location = new System.Drawing.Point(199, 132);
+            this.dgvnc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvnc.Name = "dgvnc";
+            this.dgvnc.RowTemplate.Height = 24;
+            this.dgvnc.Size = new System.Drawing.Size(544, 311);
+            this.dgvnc.TabIndex = 49;
             // 
             // btnNCDelete
             // 
@@ -180,26 +199,28 @@
             this.btnNCDelete.TabIndex = 53;
             this.btnNCDelete.Text = "Delete";
             this.btnNCDelete.UseVisualStyleBackColor = false;
+            this.btnNCDelete.Click += new System.EventHandler(this.btnNCDelete_Click);
             // 
             // btnNCFind
             // 
             this.btnNCFind.BackColor = System.Drawing.Color.Orange;
             this.btnNCFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNCFind.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNCFind.Location = new System.Drawing.Point(26, 292);
+            this.btnNCFind.Location = new System.Drawing.Point(26, 227);
             this.btnNCFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNCFind.Name = "btnNCFind";
             this.btnNCFind.Size = new System.Drawing.Size(136, 27);
             this.btnNCFind.TabIndex = 52;
             this.btnNCFind.Text = "Find";
             this.btnNCFind.UseVisualStyleBackColor = false;
+            this.btnNCFind.Click += new System.EventHandler(this.btnNCFind_Click);
             // 
             // btnNCUpdate
             // 
             this.btnNCUpdate.BackColor = System.Drawing.Color.Orange;
             this.btnNCUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNCUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNCUpdate.Location = new System.Drawing.Point(26, 230);
+            this.btnNCUpdate.Location = new System.Drawing.Point(26, 292);
             this.btnNCUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNCUpdate.Name = "btnNCUpdate";
             this.btnNCUpdate.Size = new System.Drawing.Size(136, 27);
@@ -231,6 +252,52 @@
             this.btnViewAll.TabIndex = 55;
             this.btnViewAll.Text = "View All";
             this.btnViewAll.UseVisualStyleBackColor = false;
+            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
+            // 
+            // db_Yien_ExpressDataSet
+            // 
+            this.db_Yien_ExpressDataSet.DataSetName = "db_Yien_ExpressDataSet";
+            this.db_Yien_ExpressDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblNormalClientsBindingSource
+            // 
+            this.tblNormalClientsBindingSource.DataMember = "tbl_NormalClients";
+            this.tblNormalClientsBindingSource.DataSource = this.db_Yien_ExpressDataSet;
+            // 
+            // tbl_NormalClientsTableAdapter
+            // 
+            this.tbl_NormalClientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // ncidDataGridViewTextBoxColumn
+            // 
+            this.ncidDataGridViewTextBoxColumn.DataPropertyName = "ncid";
+            this.ncidDataGridViewTextBoxColumn.HeaderText = "ncid";
+            this.ncidDataGridViewTextBoxColumn.Name = "ncidDataGridViewTextBoxColumn";
+            this.ncidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ncnameDataGridViewTextBoxColumn
+            // 
+            this.ncnameDataGridViewTextBoxColumn.DataPropertyName = "ncname";
+            this.ncnameDataGridViewTextBoxColumn.HeaderText = "ncname";
+            this.ncnameDataGridViewTextBoxColumn.Name = "ncnameDataGridViewTextBoxColumn";
+            // 
+            // nccontactDataGridViewTextBoxColumn
+            // 
+            this.nccontactDataGridViewTextBoxColumn.DataPropertyName = "nccontact";
+            this.nccontactDataGridViewTextBoxColumn.HeaderText = "nccontact";
+            this.nccontactDataGridViewTextBoxColumn.Name = "nccontactDataGridViewTextBoxColumn";
+            // 
+            // ncnicDataGridViewTextBoxColumn
+            // 
+            this.ncnicDataGridViewTextBoxColumn.DataPropertyName = "ncnic";
+            this.ncnicDataGridViewTextBoxColumn.HeaderText = "ncnic";
+            this.ncnicDataGridViewTextBoxColumn.Name = "ncnicDataGridViewTextBoxColumn";
+            // 
+            // ncaddressDataGridViewTextBoxColumn
+            // 
+            this.ncaddressDataGridViewTextBoxColumn.DataPropertyName = "ncaddress";
+            this.ncaddressDataGridViewTextBoxColumn.HeaderText = "ncaddress";
+            this.ncaddressDataGridViewTextBoxColumn.Name = "ncaddressDataGridViewTextBoxColumn";
             // 
             // NormalClientManage
             // 
@@ -241,7 +308,7 @@
             this.Controls.Add(this.btnNCDelete);
             this.Controls.Add(this.btnNCFind);
             this.Controls.Add(this.btnNCUpdate);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvnc);
             this.Controls.Add(this.txtNCAddress);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNCNIC);
@@ -257,9 +324,12 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NormalClientManage";
             this.Text = "NormalClientManage";
+            this.Load += new System.EventHandler(this.NormalClientManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvnc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNormalClientsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,11 +348,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNCID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvnc;
         private System.Windows.Forms.Button btnNCDelete;
         private System.Windows.Forms.Button btnNCFind;
         private System.Windows.Forms.Button btnNCUpdate;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnViewAll;
+        private db_Yien_ExpressDataSet db_Yien_ExpressDataSet;
+        private System.Windows.Forms.BindingSource tblNormalClientsBindingSource;
+        private db_Yien_ExpressDataSetTableAdapters.tbl_NormalClientsTableAdapter tbl_NormalClientsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ncidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ncnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nccontactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ncnicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ncaddressDataGridViewTextBoxColumn;
     }
 }
