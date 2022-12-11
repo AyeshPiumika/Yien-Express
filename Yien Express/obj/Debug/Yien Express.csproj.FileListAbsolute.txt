@@ -10,3 +10,7 @@ D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien Express.pdb
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.Form1.resources
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.Recieve.resources
 D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.Transfer.resources
+D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.AdminInterface.resources
+D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.ClientRequests.resources
+D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.CoClientManage.resources
+D:\Paid Assignments\Yien-Express\Yien Express\obj\Debug\Yien_Express.NormalClientManage.resources

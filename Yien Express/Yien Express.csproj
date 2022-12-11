@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInterface.Designer.cs">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientRequests.Designer.cs">
+      <DependentUpon>ClientRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoClientManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoClientManage.Designer.cs">
+      <DependentUpon>CoClientManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NormalClientManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NormalClientManage.Designer.cs">
+      <DependentUpon>NormalClientManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +90,20 @@
     <Compile Include="Transfer.Designer.cs">
       <DependentUpon>Transfer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminInterface.resx">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientRequests.resx">
+      <DependentUpon>ClientRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoClientManage.resx">
+      <DependentUpon>CoClientManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NormalClientManage.resx">
+      <DependentUpon>NormalClientManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled design %2844%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yien Express %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

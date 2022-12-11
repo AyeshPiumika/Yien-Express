@@ -83,6 +83,16 @@ namespace Yien_Express.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Yien_Express__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Yien Express (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Yien_Expressgg {
             get {
                 object obj = ResourceManager.GetObject("Yien Expressgg", resourceCulture);
