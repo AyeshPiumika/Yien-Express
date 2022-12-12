@@ -40,6 +40,16 @@ namespace Yien_Express.localhost {
         
         private System.Threading.SendOrPostCallback searchAllNormalClientsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback insertCorporateClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateCorporateClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback findCorporateClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteCorporateClientsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback searchAllCorporateClientsOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -92,6 +102,21 @@ namespace Yien_Express.localhost {
         
         /// <remarks/>
         public event searchAllNormalClientsCompletedEventHandler searchAllNormalClientsCompleted;
+        
+        /// <remarks/>
+        public event insertCorporateClientsCompletedEventHandler insertCorporateClientsCompleted;
+        
+        /// <remarks/>
+        public event updateCorporateClientsCompletedEventHandler updateCorporateClientsCompleted;
+        
+        /// <remarks/>
+        public event findCorporateClientsCompletedEventHandler findCorporateClientsCompleted;
+        
+        /// <remarks/>
+        public event deleteCorporateClientsCompletedEventHandler deleteCorporateClientsCompleted;
+        
+        /// <remarks/>
+        public event searchAllCorporateClientsCompletedEventHandler searchAllCorporateClientsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -251,6 +276,167 @@ namespace Yien_Express.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertCorporateClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int insertCorporateClients(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            object[] results = this.Invoke("insertCorporateClients", new object[] {
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void insertCorporateClientsAsync(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            this.insertCorporateClientsAsync(ccname, cccontact, ccaddress, ccusername, ccpassword, null);
+        }
+        
+        /// <remarks/>
+        public void insertCorporateClientsAsync(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword, object userState) {
+            if ((this.insertCorporateClientsOperationCompleted == null)) {
+                this.insertCorporateClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OninsertCorporateClientsOperationCompleted);
+            }
+            this.InvokeAsync("insertCorporateClients", new object[] {
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword}, this.insertCorporateClientsOperationCompleted, userState);
+        }
+        
+        private void OninsertCorporateClientsOperationCompleted(object arg) {
+            if ((this.insertCorporateClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.insertCorporateClientsCompleted(this, new insertCorporateClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateCorporateClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int updateCorporateClients(int ccid, string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            object[] results = this.Invoke("updateCorporateClients", new object[] {
+                        ccid,
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateCorporateClientsAsync(int ccid, string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            this.updateCorporateClientsAsync(ccid, ccname, cccontact, ccaddress, ccusername, ccpassword, null);
+        }
+        
+        /// <remarks/>
+        public void updateCorporateClientsAsync(int ccid, string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword, object userState) {
+            if ((this.updateCorporateClientsOperationCompleted == null)) {
+                this.updateCorporateClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateCorporateClientsOperationCompleted);
+            }
+            this.InvokeAsync("updateCorporateClients", new object[] {
+                        ccid,
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword}, this.updateCorporateClientsOperationCompleted, userState);
+        }
+        
+        private void OnupdateCorporateClientsOperationCompleted(object arg) {
+            if ((this.updateCorporateClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateCorporateClientsCompleted(this, new updateCorporateClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/findCorporateClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet findCorporateClients(int ccid) {
+            object[] results = this.Invoke("findCorporateClients", new object[] {
+                        ccid});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void findCorporateClientsAsync(int ccid) {
+            this.findCorporateClientsAsync(ccid, null);
+        }
+        
+        /// <remarks/>
+        public void findCorporateClientsAsync(int ccid, object userState) {
+            if ((this.findCorporateClientsOperationCompleted == null)) {
+                this.findCorporateClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfindCorporateClientsOperationCompleted);
+            }
+            this.InvokeAsync("findCorporateClients", new object[] {
+                        ccid}, this.findCorporateClientsOperationCompleted, userState);
+        }
+        
+        private void OnfindCorporateClientsOperationCompleted(object arg) {
+            if ((this.findCorporateClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.findCorporateClientsCompleted(this, new findCorporateClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/deleteCorporateClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int deleteCorporateClients(int ccid) {
+            object[] results = this.Invoke("deleteCorporateClients", new object[] {
+                        ccid});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void deleteCorporateClientsAsync(int ccid) {
+            this.deleteCorporateClientsAsync(ccid, null);
+        }
+        
+        /// <remarks/>
+        public void deleteCorporateClientsAsync(int ccid, object userState) {
+            if ((this.deleteCorporateClientsOperationCompleted == null)) {
+                this.deleteCorporateClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteCorporateClientsOperationCompleted);
+            }
+            this.InvokeAsync("deleteCorporateClients", new object[] {
+                        ccid}, this.deleteCorporateClientsOperationCompleted, userState);
+        }
+        
+        private void OndeleteCorporateClientsOperationCompleted(object arg) {
+            if ((this.deleteCorporateClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteCorporateClientsCompleted(this, new deleteCorporateClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/searchAllCorporateClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet searchAllCorporateClients() {
+            object[] results = this.Invoke("searchAllCorporateClients", new object[0]);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void searchAllCorporateClientsAsync() {
+            this.searchAllCorporateClientsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void searchAllCorporateClientsAsync(object userState) {
+            if ((this.searchAllCorporateClientsOperationCompleted == null)) {
+                this.searchAllCorporateClientsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsearchAllCorporateClientsOperationCompleted);
+            }
+            this.InvokeAsync("searchAllCorporateClients", new object[0], this.searchAllCorporateClientsOperationCompleted, userState);
+        }
+        
+        private void OnsearchAllCorporateClientsOperationCompleted(object arg) {
+            if ((this.searchAllCorporateClientsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.searchAllCorporateClientsCompleted(this, new searchAllCorporateClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -386,6 +572,136 @@ namespace Yien_Express.localhost {
         private object[] results;
         
         internal searchAllNormalClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void insertCorporateClientsCompletedEventHandler(object sender, insertCorporateClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class insertCorporateClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal insertCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void updateCorporateClientsCompletedEventHandler(object sender, updateCorporateClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateCorporateClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void findCorporateClientsCompletedEventHandler(object sender, findCorporateClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class findCorporateClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal findCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void deleteCorporateClientsCompletedEventHandler(object sender, deleteCorporateClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class deleteCorporateClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal deleteCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void searchAllCorporateClientsCompletedEventHandler(object sender, searchAllCorporateClientsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class searchAllCorporateClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal searchAllCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
