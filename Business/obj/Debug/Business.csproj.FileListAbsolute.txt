@@ -1,0 +1,7 @@
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\bin\Debug\Business.dll
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\bin\Debug\Business.pdb
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\bin\Debug\DataAccess.dll
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\bin\Debug\DataAccess.pdb
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.dll
+D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.pdb
