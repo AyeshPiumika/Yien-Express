@@ -103,5 +103,95 @@ namespace Yien_Express_Web_Page
                 throw;
             }
         }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+
+        [WebMethod]
+        public int insertCorporateClients(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                //ccclient.ccid = ccid;
+                ccclient.ccname = ccname;
+                ccclient.cccontact = cccontact;
+                ccclient.ccaddress = ccaddress;
+                ccclient.ccusername = ccusername;
+                ccclient.ccpassword = ccpassword;
+
+                return ccclient.insertCorporateClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public int updateCorporateClients(int ccid, string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                ccclient.ccid = ccid;
+                ccclient.ccname = ccname;
+                ccclient.cccontact = cccontact;
+                ccclient.ccaddress = ccaddress;
+                ccclient.ccusername = ccusername;
+                ccclient.ccpassword = ccpassword;
+
+                return ccclient.insertCorporateClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet findCorporateClients(int ccid)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                ccclient.ccid = ccid;
+
+                return ccclient.findCorporateClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public int deleteCorporateClients(int ccid)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                ccclient.ccid = ccid;
+
+                return ccclient.deleteCorporateClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet searchAllCorporateClients()
+        {
+            try
+            {
+                return new CorporateClients().searchAllCorporateClients();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }
