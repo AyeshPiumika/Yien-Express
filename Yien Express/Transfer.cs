@@ -16,5 +16,12 @@ namespace Yien_Express
         {
             InitializeComponent();
         }
+
+        private void Transfer_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'db_Yien_ExpressDataSet3.tbl_Items' table. You can move, or remove it, as needed.
+            this.tbl_ItemsTableAdapter.Fill(this.db_Yien_ExpressDataSet3.tbl_Items);
+
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Yien_Express
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CoClientManage());
+            Application.Run(new Recieve());
         }
     }
 }

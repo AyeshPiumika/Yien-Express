@@ -42,22 +42,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtItemID = new System.Windows.Forms.TextBox();
+            this.txtContent = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtNCID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -79,7 +80,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(7, 52);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(212, 419);
             this.panel1.TabIndex = 2;
@@ -88,7 +89,7 @@
             // 
             this.pictureBox2.Image = global::Yien_Express.Properties.Resources.Yien_Expressgg;
             this.pictureBox2.Location = new System.Drawing.Point(34, 41);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(135, 122);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +102,7 @@
             this.btnNCRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNCRegister.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNCRegister.Location = new System.Drawing.Point(32, 369);
-            this.btnNCRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNCRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnNCRegister.Name = "btnNCRegister";
             this.btnNCRegister.Size = new System.Drawing.Size(136, 27);
             this.btnNCRegister.TabIndex = 11;
@@ -112,7 +113,7 @@
             // txtNCAddress
             // 
             this.txtNCAddress.Location = new System.Drawing.Point(21, 334);
-            this.txtNCAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNCAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtNCAddress.Name = "txtNCAddress";
             this.txtNCAddress.Size = new System.Drawing.Size(168, 20);
             this.txtNCAddress.TabIndex = 10;
@@ -120,7 +121,7 @@
             // txtNCNIC
             // 
             this.txtNCNIC.Location = new System.Drawing.Point(21, 287);
-            this.txtNCNIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNCNIC.Margin = new System.Windows.Forms.Padding(2);
             this.txtNCNIC.Name = "txtNCNIC";
             this.txtNCNIC.Size = new System.Drawing.Size(168, 20);
             this.txtNCNIC.TabIndex = 9;
@@ -128,7 +129,7 @@
             // txtNCContact
             // 
             this.txtNCContact.Location = new System.Drawing.Point(21, 240);
-            this.txtNCContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNCContact.Margin = new System.Windows.Forms.Padding(2);
             this.txtNCContact.Name = "txtNCContact";
             this.txtNCContact.Size = new System.Drawing.Size(168, 20);
             this.txtNCContact.TabIndex = 8;
@@ -136,7 +137,7 @@
             // txtNCName
             // 
             this.txtNCName.Location = new System.Drawing.Point(21, 194);
-            this.txtNCName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNCName.Margin = new System.Windows.Forms.Padding(2);
             this.txtNCName.Name = "txtNCName";
             this.txtNCName.Size = new System.Drawing.Size(168, 20);
             this.txtNCName.TabIndex = 3;
@@ -223,21 +224,21 @@
             this.label7.Text = "Item ID :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox5
+            // txtItemID
             // 
-            this.textBox5.Location = new System.Drawing.Point(375, 103);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(168, 20);
-            this.textBox5.TabIndex = 12;
+            this.txtItemID.Location = new System.Drawing.Point(375, 103);
+            this.txtItemID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtItemID.Name = "txtItemID";
+            this.txtItemID.Size = new System.Drawing.Size(168, 20);
+            this.txtItemID.TabIndex = 12;
             // 
-            // textBox6
+            // txtContent
             // 
-            this.textBox6.Location = new System.Drawing.Point(375, 145);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(168, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtContent.Location = new System.Drawing.Point(375, 145);
+            this.txtContent.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(168, 20);
+            this.txtContent.TabIndex = 13;
             // 
             // label8
             // 
@@ -251,13 +252,13 @@
             this.label8.Text = "Content :";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox7
+            // txtContact
             // 
-            this.textBox7.Location = new System.Drawing.Point(375, 219);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(168, 20);
-            this.textBox7.TabIndex = 15;
+            this.txtContact.Location = new System.Drawing.Point(375, 219);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(168, 20);
+            this.txtContact.TabIndex = 15;
             // 
             // label9
             // 
@@ -270,13 +271,13 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Reciever Contact :";
             // 
-            // textBox8
+            // txtAddress
             // 
-            this.textBox8.Location = new System.Drawing.Point(375, 261);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(168, 20);
-            this.textBox8.TabIndex = 17;
+            this.txtAddress.Location = new System.Drawing.Point(375, 261);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(168, 20);
+            this.txtAddress.TabIndex = 17;
             // 
             // label10
             // 
@@ -290,13 +291,13 @@
             this.label10.Text = "Reciever Address :";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // textBox9
+            // txtStatus
             // 
-            this.textBox9.Location = new System.Drawing.Point(375, 303);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(168, 20);
-            this.textBox9.TabIndex = 19;
+            this.txtStatus.Location = new System.Drawing.Point(375, 303);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(168, 20);
+            this.txtStatus.TabIndex = 19;
             // 
             // label11
             // 
@@ -309,13 +310,13 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Status :";
             // 
-            // textBox10
+            // txtNCID
             // 
-            this.textBox10.Location = new System.Drawing.Point(375, 183);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(168, 20);
-            this.textBox10.TabIndex = 21;
+            this.txtNCID.Location = new System.Drawing.Point(375, 183);
+            this.txtNCID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNCID.Name = "txtNCID";
+            this.txtNCID.Size = new System.Drawing.Size(168, 20);
+            this.txtNCID.TabIndex = 21;
             // 
             // label12
             // 
@@ -328,18 +329,19 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Customer ID :";
             // 
-            // button2
+            // btnSubmit
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(389, 347);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 27);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.Orange;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSubmit.Location = new System.Drawing.Point(389, 347);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(136, 27);
+            this.btnSubmit.TabIndex = 12;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // button3
             // 
@@ -347,7 +349,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Location = new System.Drawing.Point(592, 99);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 27);
             this.button3.TabIndex = 23;
@@ -360,7 +362,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Location = new System.Drawing.Point(592, 145);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(136, 27);
             this.button4.TabIndex = 24;
@@ -371,7 +373,7 @@
             // 
             this.pictureBox3.Image = global::Yien_Express.Properties.Resources.Untitled_design__44_;
             this.pictureBox3.Location = new System.Drawing.Point(617, 303);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(164, 176);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -382,38 +384,52 @@
             // 
             this.pictureBox1.Image = global::Yien_Express.Properties.Resources.Untitled_design__43_;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(781, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Orange;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(635, 433);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(136, 27);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
             // Recieve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 480);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtNCID);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtContact);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtContent);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtItemID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Recieve";
             this.Text = "Recieve";
             this.Load += new System.EventHandler(this.Recieve_Load);
@@ -444,20 +460,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtItemID;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtNCID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnBack;
     }
 }

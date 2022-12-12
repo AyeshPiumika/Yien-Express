@@ -72,17 +72,55 @@ namespace Yien_Express
             }
             finally
             {
-                Clear();
+                ClearNC();
             }
         }
 
-        public void Clear()
+        public void ClearNC()
         {
             //txtNCID.Clear();
             txtNCName.Clear();
             txtNCContact.Clear();
             txtNCNIC.Clear();
             txtNCAddress.Clear();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int itemid = Convert.ToInt32(txtItemID.Text);
+                string details = txtContent.Text;
+                int ncid = Convert.ToInt32(txtNCID.Text);
+                int rcontact = Convert.ToInt32(txtContact.Text);
+                string raddress = txtAddress.Text;
+                string itemstatus = txtStatus.Text;
+
+                if (ye.insertItems(itemid, details, ncid, rcontact, raddress, itemstatus) > 0)
+                {
+                    MessageBox.Show("Data Added!");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+            finally
+            {
+                Clear();
+            }
+        }
+
+        public void Clear()
+        {
+            txtItemID.Clear();
+            txtContent.Clear();
+            txtNCID.Clear();
+            txtContact.Clear();
+            txtAddress.Clear();
+            txtStatus.Clear();
         }
     }
 }

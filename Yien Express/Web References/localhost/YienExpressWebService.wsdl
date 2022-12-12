@@ -217,6 +217,25 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="insertItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ncid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rcontact" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="raddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemstatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertItemsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="insertNormalClientsSoapIn">
@@ -291,6 +310,12 @@
   <wsdl:message name="findCorporateClientsAfterApproveSoapOut">
     <wsdl:part name="parameters" element="tns:findCorporateClientsAfterApproveResponse" />
   </wsdl:message>
+  <wsdl:message name="insertItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:insertItems" />
+  </wsdl:message>
+  <wsdl:message name="insertItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:insertItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="YienExpressWebServiceSoap">
     <wsdl:operation name="insertNormalClients">
       <wsdl:input message="tns:insertNormalClientsSoapIn" />
@@ -339,6 +364,10 @@
     <wsdl:operation name="findCorporateClientsAfterApprove">
       <wsdl:input message="tns:findCorporateClientsAfterApproveSoapIn" />
       <wsdl:output message="tns:findCorporateClientsAfterApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertItems">
+      <wsdl:input message="tns:insertItemsSoapIn" />
+      <wsdl:output message="tns:insertItemsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="YienExpressWebServiceSoap" type="tns:YienExpressWebServiceSoap">
@@ -451,6 +480,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="insertItems">
+      <soap:operation soapAction="http://tempuri.org/insertItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="YienExpressWebServiceSoap12" type="tns:YienExpressWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -555,6 +593,15 @@
     </wsdl:operation>
     <wsdl:operation name="findCorporateClientsAfterApprove">
       <soap12:operation soapAction="http://tempuri.org/findCorporateClientsAfterApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertItems">
+      <soap12:operation soapAction="http://tempuri.org/insertItems" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

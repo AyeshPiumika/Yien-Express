@@ -54,6 +54,8 @@ namespace Yien_Express.localhost {
         
         private System.Threading.SendOrPostCallback findCorporateClientsAfterApproveOperationCompleted;
         
+        private System.Threading.SendOrPostCallback insertItemsOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -127,6 +129,9 @@ namespace Yien_Express.localhost {
         
         /// <remarks/>
         public event findCorporateClientsAfterApproveCompletedEventHandler findCorporateClientsAfterApproveCompleted;
+        
+        /// <remarks/>
+        public event insertItemsCompletedEventHandler insertItemsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -513,6 +518,45 @@ namespace Yien_Express.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertItems", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int insertItems(int itemid, string details, int ncid, int rcontact, string raddress, string itemstatus) {
+            object[] results = this.Invoke("insertItems", new object[] {
+                        itemid,
+                        details,
+                        ncid,
+                        rcontact,
+                        raddress,
+                        itemstatus});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void insertItemsAsync(int itemid, string details, int ncid, int rcontact, string raddress, string itemstatus) {
+            this.insertItemsAsync(itemid, details, ncid, rcontact, raddress, itemstatus, null);
+        }
+        
+        /// <remarks/>
+        public void insertItemsAsync(int itemid, string details, int ncid, int rcontact, string raddress, string itemstatus, object userState) {
+            if ((this.insertItemsOperationCompleted == null)) {
+                this.insertItemsOperationCompleted = new System.Threading.SendOrPostCallback(this.OninsertItemsOperationCompleted);
+            }
+            this.InvokeAsync("insertItems", new object[] {
+                        itemid,
+                        details,
+                        ncid,
+                        rcontact,
+                        raddress,
+                        itemstatus}, this.insertItemsOperationCompleted, userState);
+        }
+        
+        private void OninsertItemsOperationCompleted(object arg) {
+            if ((this.insertItemsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.insertItemsCompleted(this, new insertItemsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -839,6 +883,32 @@ namespace Yien_Express.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void insertItemsCompletedEventHandler(object sender, insertItemsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class insertItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal insertItemsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }

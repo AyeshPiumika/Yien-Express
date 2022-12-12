@@ -29,3 +29,4 @@ D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.R
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Transfer.resources
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csproj.GenerateResource.Cache
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Register.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csprojResolveAssemblyReference.cache

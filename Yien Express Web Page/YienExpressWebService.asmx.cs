@@ -230,5 +230,28 @@ namespace Yien_Express_Web_Page
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        [WebMethod]
+        public int insertItems(int itemid, string details, int ncid, int rcontact, string raddress, string itemstatus)
+        {
+            try
+            {
+                Item itm = new Item();
+                itm.itemid = itemid;
+                itm.details = details;
+                itm.ncid = ncid;
+                itm.rcontact = rcontact;
+                itm.raddress = raddress;
+                itm.itemstatus = itemstatus;
+
+                return itm.insertItems();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }
