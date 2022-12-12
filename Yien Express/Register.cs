@@ -31,7 +31,7 @@ namespace Yien_Express
 
                 if (ye.insertCorporateClients(ccname, cccontact, ccaddress, ccusername, ccpassword) > 0)
                 {
-                    MessageBox.Show("Data Added!");
+                    MessageBox.Show("Registration Successfull!");
 
                 }
 
@@ -48,7 +48,7 @@ namespace Yien_Express
 
         public void Clear()
         {
-            //txtNCID.Clear();
+            //txtCCID.Clear();
             txtCompanyName.Clear();
             txtContact.Clear();
             txtAddress.Clear();

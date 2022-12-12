@@ -19,7 +19,6 @@ D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.e
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.pdb
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\bin\Debug\Yien Express.exe
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\bin\Debug\Yien Express.pdb
-D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csprojResolveAssemblyReference.cache
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.AdminInterface.resources
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.ClientRequests.resources
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.CoClientManage.resources

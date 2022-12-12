@@ -178,6 +178,45 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="insertCorporateClientsAfterApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ccname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cccontact" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccaddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccusername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccpassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertCorporateClientsAfterApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertCorporateClientsAfterApproveResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findCorporateClientsAfterApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ccid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findCorporateClientsAfterApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findCorporateClientsAfterApproveResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="insertNormalClientsSoapIn">
@@ -240,6 +279,18 @@
   <wsdl:message name="searchAllCorporateClientsSoapOut">
     <wsdl:part name="parameters" element="tns:searchAllCorporateClientsResponse" />
   </wsdl:message>
+  <wsdl:message name="insertCorporateClientsAfterApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:insertCorporateClientsAfterApprove" />
+  </wsdl:message>
+  <wsdl:message name="insertCorporateClientsAfterApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:insertCorporateClientsAfterApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="findCorporateClientsAfterApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:findCorporateClientsAfterApprove" />
+  </wsdl:message>
+  <wsdl:message name="findCorporateClientsAfterApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:findCorporateClientsAfterApproveResponse" />
+  </wsdl:message>
   <wsdl:portType name="YienExpressWebServiceSoap">
     <wsdl:operation name="insertNormalClients">
       <wsdl:input message="tns:insertNormalClientsSoapIn" />
@@ -280,6 +331,14 @@
     <wsdl:operation name="searchAllCorporateClients">
       <wsdl:input message="tns:searchAllCorporateClientsSoapIn" />
       <wsdl:output message="tns:searchAllCorporateClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCorporateClientsAfterApprove">
+      <wsdl:input message="tns:insertCorporateClientsAfterApproveSoapIn" />
+      <wsdl:output message="tns:insertCorporateClientsAfterApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findCorporateClientsAfterApprove">
+      <wsdl:input message="tns:findCorporateClientsAfterApproveSoapIn" />
+      <wsdl:output message="tns:findCorporateClientsAfterApproveSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="YienExpressWebServiceSoap" type="tns:YienExpressWebServiceSoap">
@@ -374,6 +433,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="insertCorporateClientsAfterApprove">
+      <soap:operation soapAction="http://tempuri.org/insertCorporateClientsAfterApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findCorporateClientsAfterApprove">
+      <soap:operation soapAction="http://tempuri.org/findCorporateClientsAfterApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="YienExpressWebServiceSoap12" type="tns:YienExpressWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -460,6 +537,24 @@
     </wsdl:operation>
     <wsdl:operation name="searchAllCorporateClients">
       <soap12:operation soapAction="http://tempuri.org/searchAllCorporateClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCorporateClientsAfterApprove">
+      <soap12:operation soapAction="http://tempuri.org/insertCorporateClientsAfterApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findCorporateClientsAfterApprove">
+      <soap12:operation soapAction="http://tempuri.org/findCorporateClientsAfterApprove" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

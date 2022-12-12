@@ -50,6 +50,10 @@ namespace Yien_Express.localhost {
         
         private System.Threading.SendOrPostCallback searchAllCorporateClientsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback insertCorporateClientsAfterApproveOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback findCorporateClientsAfterApproveOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -117,6 +121,12 @@ namespace Yien_Express.localhost {
         
         /// <remarks/>
         public event searchAllCorporateClientsCompletedEventHandler searchAllCorporateClientsCompleted;
+        
+        /// <remarks/>
+        public event insertCorporateClientsAfterApproveCompletedEventHandler insertCorporateClientsAfterApproveCompleted;
+        
+        /// <remarks/>
+        public event findCorporateClientsAfterApproveCompletedEventHandler findCorporateClientsAfterApproveCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -437,6 +447,72 @@ namespace Yien_Express.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertCorporateClientsAfterApprove", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int insertCorporateClientsAfterApprove(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            object[] results = this.Invoke("insertCorporateClientsAfterApprove", new object[] {
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void insertCorporateClientsAfterApproveAsync(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword) {
+            this.insertCorporateClientsAfterApproveAsync(ccname, cccontact, ccaddress, ccusername, ccpassword, null);
+        }
+        
+        /// <remarks/>
+        public void insertCorporateClientsAfterApproveAsync(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword, object userState) {
+            if ((this.insertCorporateClientsAfterApproveOperationCompleted == null)) {
+                this.insertCorporateClientsAfterApproveOperationCompleted = new System.Threading.SendOrPostCallback(this.OninsertCorporateClientsAfterApproveOperationCompleted);
+            }
+            this.InvokeAsync("insertCorporateClientsAfterApprove", new object[] {
+                        ccname,
+                        cccontact,
+                        ccaddress,
+                        ccusername,
+                        ccpassword}, this.insertCorporateClientsAfterApproveOperationCompleted, userState);
+        }
+        
+        private void OninsertCorporateClientsAfterApproveOperationCompleted(object arg) {
+            if ((this.insertCorporateClientsAfterApproveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.insertCorporateClientsAfterApproveCompleted(this, new insertCorporateClientsAfterApproveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/findCorporateClientsAfterApprove", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet findCorporateClientsAfterApprove(int ccid) {
+            object[] results = this.Invoke("findCorporateClientsAfterApprove", new object[] {
+                        ccid});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void findCorporateClientsAfterApproveAsync(int ccid) {
+            this.findCorporateClientsAfterApproveAsync(ccid, null);
+        }
+        
+        /// <remarks/>
+        public void findCorporateClientsAfterApproveAsync(int ccid, object userState) {
+            if ((this.findCorporateClientsAfterApproveOperationCompleted == null)) {
+                this.findCorporateClientsAfterApproveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfindCorporateClientsAfterApproveOperationCompleted);
+            }
+            this.InvokeAsync("findCorporateClientsAfterApprove", new object[] {
+                        ccid}, this.findCorporateClientsAfterApproveOperationCompleted, userState);
+        }
+        
+        private void OnfindCorporateClientsAfterApproveOperationCompleted(object arg) {
+            if ((this.findCorporateClientsAfterApproveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.findCorporateClientsAfterApproveCompleted(this, new findCorporateClientsAfterApproveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -702,6 +778,58 @@ namespace Yien_Express.localhost {
         private object[] results;
         
         internal searchAllCorporateClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void insertCorporateClientsAfterApproveCompletedEventHandler(object sender, insertCorporateClientsAfterApproveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class insertCorporateClientsAfterApproveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal insertCorporateClientsAfterApproveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void findCorporateClientsAfterApproveCompletedEventHandler(object sender, findCorporateClientsAfterApproveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class findCorporateClientsAfterApproveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal findCorporateClientsAfterApproveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

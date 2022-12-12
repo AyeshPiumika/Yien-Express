@@ -193,5 +193,42 @@ namespace Yien_Express_Web_Page
             }
         }
 
+        [WebMethod]
+        public int insertCorporateClientsAfterApprove(string ccname, int cccontact, string ccaddress, string ccusername, string ccpassword)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                //ccclient.ccid = ccid;
+                ccclient.ccname = ccname;
+                ccclient.cccontact = cccontact;
+                ccclient.ccaddress = ccaddress;
+                ccclient.ccusername = ccusername;
+                ccclient.ccpassword = ccpassword;
+
+                return ccclient.insertCorporateClientsAfterApprove();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet findCorporateClientsAfterApprove(int ccid)
+        {
+            try
+            {
+                CorporateClients ccclient = new CorporateClients();
+                ccclient.ccid = ccid;
+
+                return ccclient.findCorporateClientsAfterApprove();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

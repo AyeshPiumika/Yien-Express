@@ -36,19 +36,6 @@ namespace Business
             }
         }
 
-        public int updateCorporateClients()
-        {
-            try
-            {
-                string sql = "UPDATE tbl_CorporateClientRequest SET ccname='" + ccname + "', cccontact=" + cccontact + ", ccaddress='" + ccaddress + "', ccusername='" + ccusername + "', ccpassword='" + ccpassword + "' WHERE ccid=" + ccid;
-                return new DB_Operations().exeQuery(sql);
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
         public DataSet findCorporateClients()
         {
             try
@@ -62,11 +49,52 @@ namespace Business
             }
         }
 
+        //After approving-------------------------------------------------------------------------------------------------------------------------------------
+
+        public int insertCorporateClientsAfterApprove()
+        {
+            try
+            {
+                string sql = "INSERT INTO tbl_CorporateClientApprove (ccname,cccontact,ccaddress,ccusername,ccpassword) VALUES ('" + ccname + "'," + cccontact + ",'" + ccaddress + "','" + ccusername + "','" + ccpassword + "')";
+                return new DB_Operations().exeQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DataSet findCorporateClientsAfterApprove()
+        {
+            try
+            {
+                string sql = "SELECT * FROM tbl_CorporateClientApprove WHERE ccid=" + ccid;
+                return new DB_Operations().exeSearchQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public int updateCorporateClients()
+        {
+            try
+            {
+                string sql = "UPDATE tbl_CorporateClientApprove SET ccname='" + ccname + "', cccontact=" + cccontact + ", ccaddress='" + ccaddress + "', ccusername='" + ccusername + "', ccpassword='" + ccpassword + "' WHERE ccid=" + ccid;
+                return new DB_Operations().exeQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public int deleteCorporateClients()
         {
             try
             {
-                string sql = "DELETE FROM tbl_CorporateClientRequest WHERE ccid=" + ccid;
+                string sql = "DELETE FROM tbl_CorporateClientApprove WHERE ccid=" + ccid;
                 return new DB_Operations().exeQuery(sql);
             }
             catch
@@ -79,7 +107,7 @@ namespace Business
         {
             try
             {
-                string sql = "SELECT * FROM tbl_CorporateClientRequest";
+                string sql = "SELECT * FROM tbl_CorporateClientApprove";
                 return new DB_Operations().exeSearchQuery(sql);
             }
             catch
