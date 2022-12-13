@@ -140,7 +140,7 @@ namespace Yien_Express_Web_Page
                 ccclient.ccusername = ccusername;
                 ccclient.ccpassword = ccpassword;
 
-                return ccclient.insertCorporateClients();
+                return ccclient.updateCorporateClients();
             }
             catch
             {
@@ -246,6 +246,52 @@ namespace Yien_Express_Web_Page
                 itm.itemstatus = itemstatus;
 
                 return itm.insertItems();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet findItem(int itemid)
+        {
+            try
+            {
+                Item itm = new Item();
+                itm.itemid = itemid;
+
+                return itm.findItem();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public int updateItem(int itemid, string itemstatus)
+        {
+            try
+            {
+                Item itm = new Item();
+                itm.itemid = itemid;
+                itm.itemstatus = itemstatus;
+
+                return itm.updateItem();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public DataSet viewAllItem()
+        {
+            try
+            {
+                return new Item().viewAllItem();
             }
             catch
             {

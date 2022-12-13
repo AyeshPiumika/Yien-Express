@@ -79,7 +79,7 @@ namespace Yien_Express
         {
             int ccid = Convert.ToInt32(txtCCID.Text);
 
-            if (ye.deleteNormalClients(ccid) > 0)
+            if (ye.deleteCorporateClients(ccid) > 0)
             {
                 MessageBox.Show("Data Deleted!");
             }

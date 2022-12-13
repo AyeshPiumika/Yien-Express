@@ -236,6 +236,59 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="findItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemstatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateItemResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="viewAllItem">
+        <s:complexType />
+      </s:element>
+      <s:element name="viewAllItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="viewAllItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="insertNormalClientsSoapIn">
@@ -316,6 +369,24 @@
   <wsdl:message name="insertItemsSoapOut">
     <wsdl:part name="parameters" element="tns:insertItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="findItemSoapIn">
+    <wsdl:part name="parameters" element="tns:findItem" />
+  </wsdl:message>
+  <wsdl:message name="findItemSoapOut">
+    <wsdl:part name="parameters" element="tns:findItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateItemSoapIn">
+    <wsdl:part name="parameters" element="tns:updateItem" />
+  </wsdl:message>
+  <wsdl:message name="updateItemSoapOut">
+    <wsdl:part name="parameters" element="tns:updateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="viewAllItemSoapIn">
+    <wsdl:part name="parameters" element="tns:viewAllItem" />
+  </wsdl:message>
+  <wsdl:message name="viewAllItemSoapOut">
+    <wsdl:part name="parameters" element="tns:viewAllItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="YienExpressWebServiceSoap">
     <wsdl:operation name="insertNormalClients">
       <wsdl:input message="tns:insertNormalClientsSoapIn" />
@@ -368,6 +439,18 @@
     <wsdl:operation name="insertItems">
       <wsdl:input message="tns:insertItemsSoapIn" />
       <wsdl:output message="tns:insertItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findItem">
+      <wsdl:input message="tns:findItemSoapIn" />
+      <wsdl:output message="tns:findItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <wsdl:input message="tns:updateItemSoapIn" />
+      <wsdl:output message="tns:updateItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="viewAllItem">
+      <wsdl:input message="tns:viewAllItemSoapIn" />
+      <wsdl:output message="tns:viewAllItemSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="YienExpressWebServiceSoap" type="tns:YienExpressWebServiceSoap">
@@ -489,6 +572,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="findItem">
+      <soap:operation soapAction="http://tempuri.org/findItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <soap:operation soapAction="http://tempuri.org/updateItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewAllItem">
+      <soap:operation soapAction="http://tempuri.org/viewAllItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="YienExpressWebServiceSoap12" type="tns:YienExpressWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -602,6 +712,33 @@
     </wsdl:operation>
     <wsdl:operation name="insertItems">
       <soap12:operation soapAction="http://tempuri.org/insertItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findItem">
+      <soap12:operation soapAction="http://tempuri.org/findItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <soap12:operation soapAction="http://tempuri.org/updateItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewAllItem">
+      <soap12:operation soapAction="http://tempuri.org/viewAllItem" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

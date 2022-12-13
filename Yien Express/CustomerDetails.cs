@@ -16,5 +16,12 @@ namespace Yien_Express
         {
             InitializeComponent();
         }
+
+        private void CustomerDetails_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'db_Yien_ExpressDataSet5.tbl_NormalClients' table. You can move, or remove it, as needed.
+            this.tbl_NormalClientsTableAdapter.Fill(this.db_Yien_ExpressDataSet5.tbl_NormalClients);
+
+        }
     }
 }

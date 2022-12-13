@@ -19,6 +19,8 @@ namespace Yien_Express
 
         private void ItemDetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'db_Yien_ExpressDataSet4.tbl_Items' table. You can move, or remove it, as needed.
+            this.tbl_ItemsTableAdapter.Fill(this.db_Yien_ExpressDataSet4.tbl_Items);
 
         }
     }

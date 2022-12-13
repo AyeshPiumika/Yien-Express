@@ -56,6 +56,12 @@ namespace Yien_Express.localhost {
         
         private System.Threading.SendOrPostCallback insertItemsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback findItemOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateItemOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback viewAllItemOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -132,6 +138,15 @@ namespace Yien_Express.localhost {
         
         /// <remarks/>
         public event insertItemsCompletedEventHandler insertItemsCompleted;
+        
+        /// <remarks/>
+        public event findItemCompletedEventHandler findItemCompleted;
+        
+        /// <remarks/>
+        public event updateItemCompletedEventHandler updateItemCompleted;
+        
+        /// <remarks/>
+        public event viewAllItemCompletedEventHandler viewAllItemCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/insertNormalClients", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -557,6 +572,93 @@ namespace Yien_Express.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/findItem", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet findItem(int itemid) {
+            object[] results = this.Invoke("findItem", new object[] {
+                        itemid});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void findItemAsync(int itemid) {
+            this.findItemAsync(itemid, null);
+        }
+        
+        /// <remarks/>
+        public void findItemAsync(int itemid, object userState) {
+            if ((this.findItemOperationCompleted == null)) {
+                this.findItemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfindItemOperationCompleted);
+            }
+            this.InvokeAsync("findItem", new object[] {
+                        itemid}, this.findItemOperationCompleted, userState);
+        }
+        
+        private void OnfindItemOperationCompleted(object arg) {
+            if ((this.findItemCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.findItemCompleted(this, new findItemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateItem", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int updateItem(int itemid, string itemstatus) {
+            object[] results = this.Invoke("updateItem", new object[] {
+                        itemid,
+                        itemstatus});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateItemAsync(int itemid, string itemstatus) {
+            this.updateItemAsync(itemid, itemstatus, null);
+        }
+        
+        /// <remarks/>
+        public void updateItemAsync(int itemid, string itemstatus, object userState) {
+            if ((this.updateItemOperationCompleted == null)) {
+                this.updateItemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateItemOperationCompleted);
+            }
+            this.InvokeAsync("updateItem", new object[] {
+                        itemid,
+                        itemstatus}, this.updateItemOperationCompleted, userState);
+        }
+        
+        private void OnupdateItemOperationCompleted(object arg) {
+            if ((this.updateItemCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateItemCompleted(this, new updateItemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/viewAllItem", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet viewAllItem() {
+            object[] results = this.Invoke("viewAllItem", new object[0]);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void viewAllItemAsync() {
+            this.viewAllItemAsync(null);
+        }
+        
+        /// <remarks/>
+        public void viewAllItemAsync(object userState) {
+            if ((this.viewAllItemOperationCompleted == null)) {
+                this.viewAllItemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnviewAllItemOperationCompleted);
+            }
+            this.InvokeAsync("viewAllItem", new object[0], this.viewAllItemOperationCompleted, userState);
+        }
+        
+        private void OnviewAllItemOperationCompleted(object arg) {
+            if ((this.viewAllItemCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.viewAllItemCompleted(this, new viewAllItemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -909,6 +1011,84 @@ namespace Yien_Express.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void findItemCompletedEventHandler(object sender, findItemCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class findItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal findItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void updateItemCompletedEventHandler(object sender, updateItemCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void viewAllItemCompletedEventHandler(object sender, viewAllItemCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class viewAllItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal viewAllItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
             }
         }
     }

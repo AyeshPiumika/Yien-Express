@@ -30,3 +30,5 @@ D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.T
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csproj.GenerateResource.Cache
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.Register.resources
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien Express.csprojResolveAssemblyReference.cache
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.CustomerDetails.resources
+D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express\obj\Debug\Yien_Express.ItemDetails.resources

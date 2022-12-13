@@ -34,5 +34,44 @@ namespace Business
                 throw;
             }
         }
+
+        public DataSet findItem()
+        {
+            try
+            {
+                string sql = "SELECT * FROM tbl_Items WHERE itemid=" + itemid;
+                return new DB_Operations().exeSearchQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public int updateItem()
+        {
+            try
+            {
+                string sql = "UPDATE tbl_Items SET itemstatus='" + itemstatus + "' WHERE itemid=" + itemid;
+                return new DB_Operations().exeQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DataSet viewAllItem()
+        {
+            try
+            {
+                string sql = "SELECT * FROM tbl_Items";
+                return new DB_Operations().exeSearchQuery(sql);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
