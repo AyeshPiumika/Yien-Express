@@ -122,5 +122,26 @@ namespace Yien_Express
             txtAddress.Clear();
             txtStatus.Clear();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerDetails lo = new CustomerDetails();
+            lo.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ItemDetails lo = new ItemDetails();
+            lo.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 lo = new Form1();
+            lo.Show();
+        }
     }
 }

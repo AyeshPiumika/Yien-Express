@@ -42,6 +42,14 @@
             this.txtCCID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvcc = new System.Windows.Forms.DataGridView();
+            this.ccidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cccontactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblCorporateClientApproveBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_Yien_ExpressDataSet2 = new Yien_Express.db_Yien_ExpressDataSet2();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -49,21 +57,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnViewAll = new System.Windows.Forms.Button();
-            this.db_Yien_ExpressDataSet2 = new Yien_Express.db_Yien_ExpressDataSet2();
-            this.tblCorporateClientApproveBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_CorporateClientApproveTableAdapter = new Yien_Express.db_Yien_ExpressDataSet2TableAdapters.tbl_CorporateClientApproveTableAdapter();
-            this.ccidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cccontactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCorporateClientApproveBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblCorporateClientApproveBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -201,6 +201,53 @@
             this.dgvcc.Size = new System.Drawing.Size(638, 303);
             this.dgvcc.TabIndex = 39;
             // 
+            // ccidDataGridViewTextBoxColumn
+            // 
+            this.ccidDataGridViewTextBoxColumn.DataPropertyName = "ccid";
+            this.ccidDataGridViewTextBoxColumn.HeaderText = "ccid";
+            this.ccidDataGridViewTextBoxColumn.Name = "ccidDataGridViewTextBoxColumn";
+            this.ccidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ccnameDataGridViewTextBoxColumn
+            // 
+            this.ccnameDataGridViewTextBoxColumn.DataPropertyName = "ccname";
+            this.ccnameDataGridViewTextBoxColumn.HeaderText = "ccname";
+            this.ccnameDataGridViewTextBoxColumn.Name = "ccnameDataGridViewTextBoxColumn";
+            // 
+            // cccontactDataGridViewTextBoxColumn
+            // 
+            this.cccontactDataGridViewTextBoxColumn.DataPropertyName = "cccontact";
+            this.cccontactDataGridViewTextBoxColumn.HeaderText = "cccontact";
+            this.cccontactDataGridViewTextBoxColumn.Name = "cccontactDataGridViewTextBoxColumn";
+            // 
+            // ccaddressDataGridViewTextBoxColumn
+            // 
+            this.ccaddressDataGridViewTextBoxColumn.DataPropertyName = "ccaddress";
+            this.ccaddressDataGridViewTextBoxColumn.HeaderText = "ccaddress";
+            this.ccaddressDataGridViewTextBoxColumn.Name = "ccaddressDataGridViewTextBoxColumn";
+            // 
+            // ccusernameDataGridViewTextBoxColumn
+            // 
+            this.ccusernameDataGridViewTextBoxColumn.DataPropertyName = "ccusername";
+            this.ccusernameDataGridViewTextBoxColumn.HeaderText = "ccusername";
+            this.ccusernameDataGridViewTextBoxColumn.Name = "ccusernameDataGridViewTextBoxColumn";
+            // 
+            // ccpasswordDataGridViewTextBoxColumn
+            // 
+            this.ccpasswordDataGridViewTextBoxColumn.DataPropertyName = "ccpassword";
+            this.ccpasswordDataGridViewTextBoxColumn.HeaderText = "ccpassword";
+            this.ccpasswordDataGridViewTextBoxColumn.Name = "ccpasswordDataGridViewTextBoxColumn";
+            // 
+            // tblCorporateClientApproveBindingSource
+            // 
+            this.tblCorporateClientApproveBindingSource.DataMember = "tbl_CorporateClientApprove";
+            this.tblCorporateClientApproveBindingSource.DataSource = this.db_Yien_ExpressDataSet2;
+            // 
+            // db_Yien_ExpressDataSet2
+            // 
+            this.db_Yien_ExpressDataSet2.DataSetName = "db_Yien_ExpressDataSet2";
+            this.db_Yien_ExpressDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnInsert
             // 
             this.btnInsert.BackColor = System.Drawing.Color.Orange;
@@ -293,56 +340,9 @@
             this.btnViewAll.UseVisualStyleBackColor = false;
             this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
             // 
-            // db_Yien_ExpressDataSet2
-            // 
-            this.db_Yien_ExpressDataSet2.DataSetName = "db_Yien_ExpressDataSet2";
-            this.db_Yien_ExpressDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblCorporateClientApproveBindingSource
-            // 
-            this.tblCorporateClientApproveBindingSource.DataMember = "tbl_CorporateClientApprove";
-            this.tblCorporateClientApproveBindingSource.DataSource = this.db_Yien_ExpressDataSet2;
-            // 
             // tbl_CorporateClientApproveTableAdapter
             // 
             this.tbl_CorporateClientApproveTableAdapter.ClearBeforeFill = true;
-            // 
-            // ccidDataGridViewTextBoxColumn
-            // 
-            this.ccidDataGridViewTextBoxColumn.DataPropertyName = "ccid";
-            this.ccidDataGridViewTextBoxColumn.HeaderText = "ccid";
-            this.ccidDataGridViewTextBoxColumn.Name = "ccidDataGridViewTextBoxColumn";
-            this.ccidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ccnameDataGridViewTextBoxColumn
-            // 
-            this.ccnameDataGridViewTextBoxColumn.DataPropertyName = "ccname";
-            this.ccnameDataGridViewTextBoxColumn.HeaderText = "ccname";
-            this.ccnameDataGridViewTextBoxColumn.Name = "ccnameDataGridViewTextBoxColumn";
-            // 
-            // cccontactDataGridViewTextBoxColumn
-            // 
-            this.cccontactDataGridViewTextBoxColumn.DataPropertyName = "cccontact";
-            this.cccontactDataGridViewTextBoxColumn.HeaderText = "cccontact";
-            this.cccontactDataGridViewTextBoxColumn.Name = "cccontactDataGridViewTextBoxColumn";
-            // 
-            // ccaddressDataGridViewTextBoxColumn
-            // 
-            this.ccaddressDataGridViewTextBoxColumn.DataPropertyName = "ccaddress";
-            this.ccaddressDataGridViewTextBoxColumn.HeaderText = "ccaddress";
-            this.ccaddressDataGridViewTextBoxColumn.Name = "ccaddressDataGridViewTextBoxColumn";
-            // 
-            // ccusernameDataGridViewTextBoxColumn
-            // 
-            this.ccusernameDataGridViewTextBoxColumn.DataPropertyName = "ccusername";
-            this.ccusernameDataGridViewTextBoxColumn.HeaderText = "ccusername";
-            this.ccusernameDataGridViewTextBoxColumn.Name = "ccusernameDataGridViewTextBoxColumn";
-            // 
-            // ccpasswordDataGridViewTextBoxColumn
-            // 
-            this.ccpasswordDataGridViewTextBoxColumn.DataPropertyName = "ccpassword";
-            this.ccpasswordDataGridViewTextBoxColumn.HeaderText = "ccpassword";
-            this.ccpasswordDataGridViewTextBoxColumn.Name = "ccpasswordDataGridViewTextBoxColumn";
             // 
             // btnBack
             // 
@@ -356,6 +356,7 @@
             this.btnBack.TabIndex = 46;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // CoClientManage
             // 
@@ -388,10 +389,10 @@
             this.Text = "CoClientManage";
             this.Load += new System.EventHandler(this.CoClientManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCorporateClientApproveBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_Yien_ExpressDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblCorporateClientApproveBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,5 +23,12 @@ namespace Yien_Express
             this.tbl_NormalClientsTableAdapter.Fill(this.db_Yien_ExpressDataSet5.tbl_NormalClients);
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Recieve lo = new Recieve();
+            lo.Show();
+        }
     }
 }

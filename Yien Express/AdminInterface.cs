@@ -19,7 +19,30 @@ namespace Yien_Express
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            ClientRequests lo = new ClientRequests();
+            lo.Show();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CoClientManage lo = new CoClientManage();
+            lo.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NormalClientManage lo = new NormalClientManage();
+            lo.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 lo = new Form1();
+            lo.Show();
         }
     }
 }

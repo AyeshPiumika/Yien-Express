@@ -117,5 +117,12 @@ namespace Yien_Express
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 lo = new Form1();
+            lo.Show();
+        }
     }
 }

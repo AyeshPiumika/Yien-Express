@@ -55,5 +55,12 @@ namespace Yien_Express
             txtUsername.Clear();
             txtPassword.Clear();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 lo = new Form1();
+            lo.Show();
+        }
     }
 }

@@ -95,5 +95,12 @@ namespace Yien_Express
                 Clear();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminInterface lo = new AdminInterface();
+            lo.Show();
+        }
     }
 }

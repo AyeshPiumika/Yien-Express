@@ -50,6 +50,7 @@
             this.tbl_ItemsTableAdapter = new Yien_Express.db_Yien_ExpressDataSet3TableAdapters.tbl_ItemsTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblItemsBindingSource)).BeginInit();
@@ -259,11 +260,26 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(773, 451);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 27);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Transfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 489);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvitem);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -306,5 +322,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn raddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemstatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnViewAll;
+        private System.Windows.Forms.Button button1;
     }
 }
