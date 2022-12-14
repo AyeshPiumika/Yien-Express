@@ -15,7 +15,19 @@
         .input{
              padding-left:50px;
             padding-right:50px;
+             text-align:center;
+             align-content:center;
         }
+         .mb-3 {
+             width: 352px;
+             margin-left: 507px;
+         }
+         #Label1{
+              text-align:center;
+         }
+         .tblc{
+              text-align:center;
+         }
     </style>
     <link rel="stylesheet" href="    https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
@@ -26,7 +38,7 @@
         <div class="title">
             Yein Express
         </div>
-    <div class="input">
+    <div class="input"align="center">
         <div class="mb-3">
       <label for="disabledTextInput" class="form-label">Input Your Tracking ID :</label>
             <asp:TextBox ID="txtTrackingNumber" runat="server"></asp:TextBox>
@@ -35,7 +47,8 @@
     </div>
     </div>
     </div>
-        <asp:GridView ID="GridView1" runat="server" Height="152px" Width="619px" BackColor="#FF9900" BorderColor="White" BorderStyle="Solid" ForeColor="White" style="margin-left: 410px" AutoGenerateColumns="False" DataKeyNames="itemid" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Visible="False">
+        <div class="tblc" align="center">
+        <asp:GridView ID="GridView1" runat="server" Height="152px" Width="619px" BackColor="#FF9900" BorderColor="White" BorderStyle="Solid" ForeColor="White" style="margin-left: 410px" AutoGenerateColumns="False" DataKeyNames="itemid" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="itemid" HeaderText="itemid" ReadOnly="True" SortExpression="itemid" />
                 <asp:BoundField DataField="details" HeaderText="details" SortExpression="details" />
@@ -47,7 +60,7 @@
        
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_Yien_ExpressConnectionString %>" SelectCommand="SELECT [itemid], [details], [rcontact], [raddress], [itemstatus] FROM [tbl_Items]"></asp:SqlDataSource>
         <asp:Label ID="Label1" runat="server"></asp:Label>
-       
+       </div>
     </form>
 </body>
 </html>
