@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientInterface.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +80,13 @@
     <Content Include="YienExpressWebService.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientInterface.aspx.cs">
+      <DependentUpon>ClientInterface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientInterface.aspx.designer.cs">
+      <DependentUpon>ClientInterface.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YienExpressWebService.asmx.cs">
       <DependentUpon>YienExpressWebService.asmx</DependentUpon>
