@@ -5,3 +5,10 @@ D:\Dinali Akka's\SOC-Software\Yien-Express\Business\bin\Debug\DataAccess.pdb
 D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.dll
 D:\Dinali Akka's\SOC-Software\Yien-Express\Business\obj\Debug\Business.pdb
+D:\Paid Assignments\Yien-Express\Business\bin\Debug\Business.dll
+D:\Paid Assignments\Yien-Express\Business\bin\Debug\Business.pdb
+D:\Paid Assignments\Yien-Express\Business\bin\Debug\DataAccess.dll
+D:\Paid Assignments\Yien-Express\Business\bin\Debug\DataAccess.pdb
+D:\Paid Assignments\Yien-Express\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\Paid Assignments\Yien-Express\Business\obj\Debug\Business.dll
+D:\Paid Assignments\Yien-Express\Business\obj\Debug\Business.pdb

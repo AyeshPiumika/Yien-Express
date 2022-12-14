@@ -68,18 +68,18 @@
     <Compile Include="CoClientManage.Designer.cs">
       <DependentUpon>CoClientManage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="CustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerDetails.Designer.cs">
       <DependentUpon>CustomerDetails.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="db_Yien_ExpressDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_Yien_ExpressDataSet.xsd</DependentUpon>
->>>>>>> upstream/main
+
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -113,14 +113,13 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
+
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
->>>>>>> upstream/main
+
     <Compile Include="Transfer.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -22,3 +22,27 @@ D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express Web Page\bin\Microsoft.C
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express Web Page\bin\DataAccess.pdb
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express Web Page\obj\Debug\Yien Express Web Page.dll
 D:\Dinali Akka's\SOC-Software\Yien-Express\Yien Express Web Page\obj\Debug\Yien Express Web Page.pdb
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\csc.exe
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\System.Collections.Immutable.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\System.Reflection.Metadata.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\vbc.exe
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\VBCSCompiler.exe
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\roslyn\VBCSCompiler.exe.config
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Yien Express Web Page.dll.config
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Yien Express Web Page.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Yien Express Web Page.pdb
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Business.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\DataAccess.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Business.pdb
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\bin\DataAccess.pdb
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\obj\Debug\Yien Express Web Page.csprojResolveAssemblyReference.cache
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\obj\Debug\Yien Express Web Page.dll
+D:\Paid Assignments\Yien-Express\Yien Express Web Page\obj\Debug\Yien Express Web Page.pdb
